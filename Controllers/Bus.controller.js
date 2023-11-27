@@ -58,4 +58,42 @@ const deleteapibus =async(req,res)=>{
 
 }
 
-export {postapibus,getapibus,deleteapibus}
+const putapibus = async(req,res)=>{
+
+    const { _id } = req.params
+
+    const { busName, busNumber, totalSeat, availableSeat, bookedSeat}= req.body;
+
+    await Bus.updateOne({_id:_id} , {$set:{ busName, busNumber, totalSeat, availableSeat, bookedSeat}})
+
+     const updatedBus= await Bus.findById( _id );
+
+  return res.status(200).json({
+    data:updatedBus,
+    success:true,
+    message:" bus details updated"
+  })
+}
+
+const patchapibus = async(req,res)=>{
+
+    const { _id }= req.params
+
+    const { bookedSeat } =req.body;
+
+    await Bus.updateOne({_id:_id},{$set:{bookedSeat:bookedSeat}})
+
+  res.status(200).json({
+    status:true,
+    message:"update"
+  })
+
+
+
+}
+
+
+
+//pust
+
+export {postapibus,getapibus,deleteapibus,putapibus,patchapibus}
