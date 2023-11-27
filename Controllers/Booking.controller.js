@@ -45,4 +45,17 @@ const getapibooking= async(req,res)=>{
     })
 }
 
-export{postapibooking,getapibooking}
+const getapibookingid= async(req,res)=>{
+
+    const { _id }= req.params
+
+    const findPassengersById = await Booking.findOne({_id:_id})
+
+    res.status(200).json({
+        success:true,
+        data:findPassengersById,
+        message:'succesfully find passenger By id'
+    })
+}
+
+export{postapibooking,getapibooking,getapibookingid}

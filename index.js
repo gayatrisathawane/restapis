@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 dotenv.config()
 import {postapibus,getapibus,deleteapibus,putapibus,patchapibus} from './Controllers/Bus.controller.js'
-import { postapibooking,getapibooking } from './Controllers/Booking.controller.js'
+import { postapibooking,getapibooking,getapibookingid } from './Controllers/Booking.controller.js'
 import Booking from './models/Booking.model.js'
 
 const app = express()
@@ -37,7 +37,7 @@ app.patch('/api/v1/buses/:_id',patchapibus)
 //post api for Booking
 app.post('/api/v1/bookings',postapibooking)
 app.get('/api/v1/bookings',getapibooking)
-app
+app.get('/api/v1/bookings/:_id',getapibookingid)
 
 
 
