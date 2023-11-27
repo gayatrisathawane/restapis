@@ -28,17 +28,12 @@ const postapibus= async(req,res)=>{
     }
 
 const getapibus = async(req,res)=>{
-
-
     const allBuses = await Bus.find()
-
     res.status(200).json({
 
         status:true,
         data:allBuses,
         message:"fetch all buses"
-    
-
     })
 }
 
@@ -53,9 +48,6 @@ const deleteapibus =async(req,res)=>{
         message:"bus deleted successfully",
         data:null
     })
-
-    
-
 }
 
 const putapibus = async(req,res)=>{

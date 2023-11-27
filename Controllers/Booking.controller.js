@@ -5,11 +5,7 @@ const postapibooking = async(req,res)=>{
 
     const newBooking = new Booking({
         bus,passengerName,mobileNo,SeatNumber,to,from
-
-
     })
-
-
     try{
         const savedBooking= await  newBooking.save()
 
@@ -18,7 +14,6 @@ const postapibooking = async(req,res)=>{
             data:savedBooking,
             message:"successfully booked"
         })
-
     }catch(error){
 
         return res.json({
@@ -28,12 +23,8 @@ const postapibooking = async(req,res)=>{
             message:(error.message)
 
         })
-
-
-    }
-   
+    } 
 }
-
 const getapibooking= async(req,res)=>{
 
     const allpassengers = await Booking.find()
