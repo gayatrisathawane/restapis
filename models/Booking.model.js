@@ -4,6 +4,7 @@ const bookingSchema = new Schema({
 
     bus:{
         type:Schema.Types.ObjectId,
+        ref:'Bus',
         required:true,
 
     },
@@ -16,6 +17,7 @@ const bookingSchema = new Schema({
     SeatNumber:{
         type:Number,
         required:true,
+        unique:true
 
     },
     bookingDate:{
