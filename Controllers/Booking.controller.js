@@ -34,4 +34,15 @@ const postapibooking = async(req,res)=>{
    
 }
 
-export{postapibooking}
+const getapibooking= async(req,res)=>{
+
+    const allpassengers = await Booking.find()
+
+    res.status(200).json({
+        success:true,
+        data:allpassengers,
+        message:"successfully fetch all passenger"
+    })
+}
+
+export{postapibooking,getapibooking}
