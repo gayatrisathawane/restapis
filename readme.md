@@ -2,7 +2,7 @@
 
 **RESTful APIs** (Representational State Transfer APIs) are a type of web service architecture designed to facilitate communication and data exchange between systems over the internet. They adhere to the principles of REST, which is an architectural style introduced by **Roy Fielding** in his doctoral dissertation in 2000.
 
-<img src = "" alt="image">
+<img src = "https://www.c-sharpcorner.com/article/restful-api-in-net-core-using-ef-core-and-postgres/Images/Restful%20Api%20In%20dotnet%20Core%20Using%20Ef%20Core%20And%20Postgres.png" alt="image">
 
 
 In HTTP there are five methods that are commonly used in a REST-based Architecture .
